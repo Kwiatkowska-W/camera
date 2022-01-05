@@ -12,20 +12,20 @@ import android.graphics.Bitmap
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
-    var btn = findViewById<Button>(R.id.button)
-    var img = findViewById<ImageView>(R.id.imageViev)
+    // var btn = findViewById<Button>(R.id.button)
+    // var img = findViewById<ImageView>(R.id.imageViev)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btn.isEnabled = false
+        findViewById<Button>(R.id.button)
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions( this, arrayOf(Manifest.permission.CAMERA), 111)
         }
         else
-            btn.isEnabled = true
+            findViewById<Button>(R.id.button).isEnabled = true
 
-        btn.setOnClickListener{
+        findViewById<Button>(R.id.button).setOnClickListener{
             var i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(i, 101)
 
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         if (requestCode==101){
             var mojObrazek: Bitmap?
             mojObrazek = data?.getParcelableExtra<Bitmap>("data")
-            img.setImageBitmap(mojObrazek)
+            findViewById<ImageView>(R.id.imageView).setImageBitmap(mojObrazek)
         }
     }
     override fun onRequestPermissionsResult(
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode==111 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
-            btn.isEnabled = true
+            findViewById<Button>(R.id.button).isEnabled = true
         }
     }
 }
