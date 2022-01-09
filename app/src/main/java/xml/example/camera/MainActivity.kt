@@ -12,6 +12,7 @@ import android.graphics.Bitmap
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -19,8 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         val myImage = findViewById<ImageView>(R.id.imageView)
         val myButton = findViewById<Button>(R.id.next)
-        val myButton2 = findViewById<Button>(R.id.previous)
-
 
         myButton.setOnClickListener {
             when(actualImage){
@@ -43,6 +42,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        val myButton2 = findViewById<Button>(R.id.previous)
 
         myButton2.setOnClickListener {
             when(actualImage){
@@ -75,6 +75,8 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button).setOnClickListener{
             var i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(i, 101)
+
+
     }
 }
 
