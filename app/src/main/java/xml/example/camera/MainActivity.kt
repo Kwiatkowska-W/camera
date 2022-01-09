@@ -12,11 +12,58 @@ import android.graphics.Bitmap
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
-    // var btn = findViewById<Button>(R.id.button)
-    // var img = findViewById<ImageView>(R.id.imageViev)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var actualImage = 1
+
+        val myImage = findViewById<ImageView>(R.id.imageView)
+        val myButton = findViewById<Button>(R.id.next)
+        val myButton2 = findViewById<Button>(R.id.previous)
+
+
+        myButton.setOnClickListener {
+            when(actualImage){
+                1 -> {
+                    myImage.setImageResource(R.drawable.zdj2)
+                    actualImage++
+                }
+                2 -> {
+                    myImage.setImageResource(R.drawable.zdj3)
+                    actualImage++
+                }
+                3 -> {
+                    myImage.setImageResource(R.drawable.zdj4)
+                    actualImage++
+                }
+                4 -> {
+                    myImage.setImageResource(R.drawable.zdj1)
+                    actualImage = 1
+                }
+            }
+        }
+
+
+        myButton2.setOnClickListener {
+            when(actualImage){
+                1 -> {
+                    myImage.setImageResource(R.drawable.zdj4)
+                    actualImage = 4
+                }
+                2 -> {
+                    myImage.setImageResource(R.drawable.zdj1)
+                    actualImage = 1
+                }
+                3 -> {
+                    myImage.setImageResource(R.drawable.zdj2)
+                    actualImage = 2
+                }
+                4 -> {
+                    myImage.setImageResource(R.drawable.zdj3)
+                    actualImage = 3
+                }
+            }
+        }
 
         findViewById<Button>(R.id.button)
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA)!=PackageManager.PERMISSION_GRANTED){
@@ -28,8 +75,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button).setOnClickListener{
             var i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(i, 101)
-
-
     }
 }
 
