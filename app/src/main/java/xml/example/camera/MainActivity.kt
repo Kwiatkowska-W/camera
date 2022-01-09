@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.core.app.ActivityCompat
 import android.Manifest
 import android.graphics.Bitmap
+import android.widget.EditText
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
@@ -63,6 +64,13 @@ class MainActivity : AppCompatActivity() {
                     actualImage = 3
                 }
             }
+        }
+
+        findViewById<Button>(R.id.finish).setOnClickListener {
+            //    findViewById<Button>(R.id.przycisk).text="działa"
+            findViewById<ImageView>(R.id.imageView).rotationX=findViewById<EditText>(R.id.textX).text.toString().toFloat()
+            findViewById<ImageView>(R.id.imageView).scaleY=findViewById<EditText>(R.id.textY).text.toString().toFloat()
+            findViewById<ImageView>(R.id.imageView).alpha=findViewById<EditText>(R.id.alpha).text.toString().toFloat()
         }
 
         findViewById<Button>(R.id.button)
