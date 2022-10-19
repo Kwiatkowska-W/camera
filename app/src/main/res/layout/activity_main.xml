@@ -16,10 +16,10 @@
         android:text="Podaj alphe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintVertical_bias="0.372" />
 
     <EditText
         android:id="@+id/textY"
@@ -30,7 +30,7 @@
         android:text="Podaj Y"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toEndOf="@+id/textX"
         app:layout_constraintTop_toTopOf="@+id/textX"
         app:layout_constraintVertical_bias="0.0" />
@@ -101,12 +101,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Finish change"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/green"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.174"
-        app:layout_constraintStart_toEndOf="@+id/alpha"
-        app:layout_constraintTop_toTopOf="@+id/alpha"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alpha"
+        app:layout_constraintVertical_bias="0.571" />
 
     <TextView
         android:id="@+id/name"
@@ -116,7 +116,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/finish"
+        app:layout_constraintTop_toBottomOf="@+id/green"
         app:layout_constraintVertical_bias="0.75" />
 
     <Button
@@ -129,7 +129,7 @@
         app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/alpha"
-        app:layout_constraintVertical_bias="0.157" />
+        app:layout_constraintVertical_bias="0.497" />
 
     <Button
         android:id="@+id/green"
