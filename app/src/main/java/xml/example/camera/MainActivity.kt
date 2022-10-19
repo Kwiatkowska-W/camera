@@ -9,6 +9,8 @@ import android.widget.Button
 import androidx.core.app.ActivityCompat
 import android.Manifest
 import android.graphics.Bitmap
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.widget.EditText
 import android.widget.ImageView
 
@@ -83,9 +85,17 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.button).setOnClickListener{
             var i = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivityForResult(i, 101)
-
-
     }
+        findViewById<Button>(R.id.red).setOnClickListener{
+            findViewById<ImageView>(R.id.imageView).setColorFilter(Color.RED, PorterDuff.Mode.LIGHTEN)
+        }
+        findViewById<Button>(R.id.blue).setOnClickListener{
+            findViewById<ImageView>(R.id.imageView).setColorFilter(Color.BLUE, PorterDuff.Mode.LIGHTEN)
+        }
+        findViewById<Button>(R.id.green).setOnClickListener{
+            findViewById<ImageView>(R.id.imageView).setColorFilter(Color.GREEN, PorterDuff.Mode.LIGHTEN)
+        }
+
 }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
